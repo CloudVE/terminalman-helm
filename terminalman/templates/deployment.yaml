@@ -14,7 +14,7 @@ metadata:
     authproxy.stakater.com/discovery-url: {{ tpl .Values.oidc.discovery_url . }}
     authproxy.stakater.com/oauth-uri: "{{ index (index .Values.ingress.hosts 0).paths 0 }}/oauth"
     # authproxy.stakater.com/verbose: "true"
-    authproxy.stakater.com/gatekeeper-image: keycloak/keycloak-gatekeeper:7.0.0
+    authproxy.stakater.com/gatekeeper-image: quay.io/keycloak/keycloak-gatekeeper:7.0.1
 {{- with .Values.annotations }}
 {{ toYaml . | indent 4 }}
 {{- end }}
